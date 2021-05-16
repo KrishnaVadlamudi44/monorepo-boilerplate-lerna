@@ -1,0 +1,29 @@
+{
+  "name": "monorepo-boilerplate-lerna",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "npm install; lerna bootstrap;",
+    "package:admin": "lerna run --scope admin --stream dev",
+    "package:user-app": "lerna run --scope user-app --stream dev",
+    "start": "run-p --print-label package:*",
+    "build": "lerna run --parallel build"
+  },
+  "devDependencies": {
+    "@types/next": "^9.0.0",
+    "@types/node": "^15.3.0",
+    "@types/react": "^17.0.5",
+    "@zeit/next-typescript": "^1.1.1",
+    "lerna": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "next": "^10.2.0",
+    "next-transpile-modules": "^7.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
